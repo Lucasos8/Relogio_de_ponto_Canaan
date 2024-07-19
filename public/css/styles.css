@@ -1,0 +1,64 @@
+/*Etética para todas as pags, caminho: views, includes, header*/
+.corpo-site {
+    background: #222224;   
+}
+
+.container-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+/*Etética para o pag index*/
+
+.container-index {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.form-index {
+    background-color:#222224;
+    height: 25%;   
+    width: 25%;
+    text-align: center;
+    float: left;
+}
+.form-label-index {
+    background:#222224;
+    color: rgb(224, 243, 58);
+    font-size: 150%;
+    font-variant: small-caps;
+    font-weight: 800;
+}
+/*Etética para a pag cadastroFuncionario (CF)*/
+.container-CF {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.form-CF {
+    background-color:#222224;
+    height: 25%;   
+    width: 25%;
+    text-align: center;
+    float: left;
+}
+.form-label-CF {
+    background:#222224;
+    color: rgb(224, 243, 58);
+    font-size: 150%;
+    font-variant: small-caps;
+    font-weight: 800;
+}
+
+.container-nivel-user{
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    height: 30%;
+}
