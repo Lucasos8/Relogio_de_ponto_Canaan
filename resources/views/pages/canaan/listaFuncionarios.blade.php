@@ -1,39 +1,39 @@
 @extends('layouts.default')
 @section('content')
-<h2>Lista de veiculos</h2>    
-    
+<h2>Lista de Funcionarios</h2>    
+<?php
+
+date_default_timezone_set("America/Sao_Paulo");
+
+$dataAtual = date("d-m-y");
+
+?>
     <table class="table table-striped">
         <thead>
             <tr>
-                <td>Imagem</td>
-                <td>Dados</td>
-                <td>cilindrada</td> 
-                <td>marca</td>
-                <td>ano</td>
-                <td>valor</td>                                 
-                <td>Editar dados</td>
-                <td>Excluir dados</td>
-            </tr>
+                <td>Nome</td>
+                <td>CPF</td>
+                <td>Nascimento</td> 
+                <td>Senha</td>
+                <td>Cargo</td>
+                <td>Atualizar dados</td>
+                <td>Registrar horas</td>
+                <td>Consultar horas</td>
+                </tr>
         </thead>
         @csrf
         <tbody>
-            @foreach($veiculos as $veiculo)  
+            @foreach($users as $user)  
             <tr>
-                <td><img src="{{ asset('storage/' . $veiculo -> image) }}" alt="Imagem do veículo" width="175px" height="125px"> </td>
-                <td>{{$veiculo->nome}} <br> {{$veiculo->descrição}} </td>
-                <td>{{$veiculo->cilindrada}}</td>
-                <td>{{$veiculo->marca}}</td>
-                <td>{{$veiculo->ano}}</td>
-                <td>{{$veiculo->valor}}</td>
-                <td><a class="btn btn-outline-primary" href="{{route('veiculando.edit',['id' => $veiculo->id])}}">Editar</a></td>
-                <td>
-                    <form method="POST" action="{{ route('veiculando.delete', ['id' => $veiculo->id]) }}">
-                        @csrf
-                    <button type="submit" class="btn btn-outline-danger">Deletar</button>
-                    </form>
-                </td>    
-                
-            </tr>
+                <td>{{$user->nome}}</td>
+                <td>{{$user->cpf}}</td>
+                <td>{{$user->nascimento}}</td>
+                <td>{{$user->senha}}</td>
+                <td>{{$user->cargo}}</td>
+                <td><a class="btn btn-outline-primary" href="{{route('canaan.edit',['id' => $user->id])}}">Editar</a></td>
+                <td><a class="btn btn-outline-primary" href="{{route('canaan.registraHoras',['idUser' => $user->id])}}">Registrar horas</a></td>
+                <td><a class="btn btn-outline-primary" href="{{route('canaan.acessaHoras')}}">Consultar horas</a></td>
+                </tr>
             @endforeach
         </tbody>        
     </table>

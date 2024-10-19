@@ -7,7 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Nivel_acesso extends Model
 {
-    use HasFactory;
+    public $timestamps = false;
+    protected $table = 'nivel_acesso';
     protected $primaryKey='id';
     protected $fillable = ['id', 'nivel_user'];
 
